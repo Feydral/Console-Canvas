@@ -49,28 +49,40 @@ impl Canvas {
 
     pub fn render(&mut self) {
         self.out.clear();
-        self.out.extend_from_slice(b"\x1b[H");
+        self.out.extend_from_slice(b"\x1b[?2026h\x1b[H");
         
         let rows = self.height / 2;
+        let mut last_fg = Color::BLACK;
+        let mut last_bg = Color::BLACK;
         
         for row in 0..rows {
             let inv      = rows - 1 - row;
             let y_top    = inv * 2 + 1;
             let y_bottom = inv * 2;
-            
+
             for x in 0..self.width {
                 let fg = self.get_pixel(x, y_top);
                 let bg = self.get_pixel(x, y_bottom);
-                
-                write!(self.out, "\x1b[38;2;{};{};{}m", fg.r, fg.g, fg.b).unwrap();
-                write!(self.out, "\x1b[48;2;{};{};{}m", bg.r, bg.g, bg.b).unwrap();
-                
+
+                if fg != last_fg {
+                    write!(self.out, "\x1b[38;2;{};{};{}m", fg.r, fg.g, fg.b).unwrap();
+                    last_fg = fg;
+                }
+                if bg != last_bg {
+                    write!(self.out, "\x1b[48;2;{};{};{}m", bg.r, bg.g, bg.b).unwrap();
+                    last_bg = bg;
+                }
+
                 self.out.extend_from_slice("▀".as_bytes());
             }
-            
+
             self.out.extend_from_slice(b"\x1b[0m");
+            last_fg = Color::BLACK;
+            last_bg = Color::BLACK;
         }
-        
+    
+        self.out.extend_from_slice(b"\x1b[?2026l");
+
         let mut stdout = stdout();
         stdout.write_all(&self.out).unwrap();
         stdout.flush().unwrap();

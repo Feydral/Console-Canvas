@@ -1,0 +1,1330 @@
+   0.075137000s  INFO prepare_target{force=false package_id=console_canvas v0.1.0 (C:\Users\lianh\Coding\console_canvas) target="console_canvas"}: cargo::core::compiler::fingerprint: fingerprint error for console_canvas v0.1.0 (C:\Users\lianh\Coding\console_canvas)/Check { test: false }/TargetInner { name: "console_canvas", doc: true, ..: with_path("C:\\Users\\lianh\\Coding\\console_canvas\\src\\main.rs", Edition2024) }
+   0.075173200s  INFO prepare_target{force=false package_id=console_canvas v0.1.0 (C:\Users\lianh\Coding\console_canvas) target="console_canvas"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\console_canvas-9ba194ff79fc4d89\bin-console_canvas`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   0.089442000s  INFO prepare_target{force=false package_id=crossterm v0.29.0 target="crossterm"}: cargo::core::compiler::fingerprint: fingerprint error for crossterm v0.29.0/Check { test: false }/TargetInner { ..: lib_target("crossterm", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\crossterm-0.29.0\\src\\lib.rs", Edition2021) }
+   0.089471500s  INFO prepare_target{force=false package_id=crossterm v0.29.0 target="crossterm"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\crossterm-8d33faaeb9fe87e6\lib-crossterm`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.090045100s  INFO prepare_target{force=false package_id=bitflags v2.10.0 target="bitflags"}: cargo::core::compiler::fingerprint: fingerprint error for bitflags v2.10.0/Check { test: false }/TargetInner { ..: lib_target("bitflags", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\bitflags-2.10.0\\src\\lib.rs", Edition2021) }
+   0.090059900s  INFO prepare_target{force=false package_id=bitflags v2.10.0 target="bitflags"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\bitflags-a8d73902caf1e314\lib-bitflags`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.090495800s  INFO prepare_target{force=false package_id=crossterm_winapi v0.9.1 target="crossterm_winapi"}: cargo::core::compiler::fingerprint: fingerprint error for crossterm_winapi v0.9.1/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("crossterm_winapi", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\crossterm_winapi-0.9.1\\src\\lib.rs", Edition2018) }
+   0.090511600s  INFO prepare_target{force=false package_id=crossterm_winapi v0.9.1 target="crossterm_winapi"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\crossterm_winapi-dd3d1247851e969c\lib-crossterm_winapi`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.090875100s  INFO prepare_target{force=false package_id=winapi v0.3.9 target="winapi"}: cargo::core::compiler::fingerprint: fingerprint error for winapi v0.3.9/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("winapi", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\winapi-0.3.9\\src\\lib.rs", Edition2015) }
+   0.090888000s  INFO prepare_target{force=false package_id=winapi v0.3.9 target="winapi"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\winapi-2bb1a4fb2644f389\lib-winapi`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.092031400s  INFO prepare_target{force=false package_id=winapi v0.3.9 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for winapi v0.3.9/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\winapi-0.3.9\\build.rs", Edition2015) }
+   0.092044500s  INFO prepare_target{force=false package_id=winapi v0.3.9 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\winapi-c07b89d7f4fbdea1\run-build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.092303700s  INFO prepare_target{force=false package_id=winapi v0.3.9 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for winapi v0.3.9/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\winapi-0.3.9\\build.rs", Edition2015) }
+   0.092314900s  INFO prepare_target{force=false package_id=winapi v0.3.9 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\winapi-2bd6c929907246ce\build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.092697300s  INFO prepare_target{force=false package_id=derive_more v2.1.1 target="derive_more"}: cargo::core::compiler::fingerprint: fingerprint error for derive_more v2.1.1/Check { test: false }/TargetInner { ..: lib_target("derive_more", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\derive_more-2.1.1\\src\\lib.rs", Edition2021) }
+   0.092709700s  INFO prepare_target{force=false package_id=derive_more v2.1.1 target="derive_more"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\derive_more-e8cdc1a1e46e91bf\lib-derive_more`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.093103700s  INFO prepare_target{force=false package_id=derive_more-impl v2.1.1 target="derive_more_impl"}: cargo::core::compiler::fingerprint: fingerprint error for derive_more-impl v2.1.1/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("derive_more_impl", ["proc-macro"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\derive_more-impl-2.1.1\\src\\lib.rs", Edition2021) }
+   0.093137900s  INFO prepare_target{force=false package_id=derive_more-impl v2.1.1 target="derive_more_impl"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\derive_more-impl-c3296c988c19a10a\lib-derive_more_impl`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.093488500s  INFO prepare_target{force=false package_id=convert_case v0.10.0 target="convert_case"}: cargo::core::compiler::fingerprint: fingerprint error for convert_case v0.10.0/Build/TargetInner { ..: lib_target("convert_case", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\convert_case-0.10.0\\src\\lib.rs", Edition2021) }
+   0.093499900s  INFO prepare_target{force=false package_id=convert_case v0.10.0 target="convert_case"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\convert_case-d014e0369c9f0e64\lib-convert_case`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.093816300s  INFO prepare_target{force=false package_id=unicode-segmentation v1.12.0 target="unicode_segmentation"}: cargo::core::compiler::fingerprint: fingerprint error for unicode-segmentation v1.12.0/Build/TargetInner { ..: lib_target("unicode_segmentation", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\unicode-segmentation-1.12.0\\src\\lib.rs", Edition2018) }
+   0.093828700s  INFO prepare_target{force=false package_id=unicode-segmentation v1.12.0 target="unicode_segmentation"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\unicode-segmentation-aa0dd87f305a3ab2\lib-unicode_segmentation`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.094167700s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.105 target="proc_macro2"}: cargo::core::compiler::fingerprint: fingerprint error for proc-macro2 v1.0.105/Build/TargetInner { ..: lib_target("proc_macro2", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\proc-macro2-1.0.105\\src\\lib.rs", Edition2021) }
+   0.094178600s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.105 target="proc_macro2"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\proc-macro2-6c72686b79ccb466\lib-proc_macro2`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.095288800s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.105 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for proc-macro2 v1.0.105/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\proc-macro2-1.0.105\\build.rs", Edition2021) }
+   0.095303200s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.105 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\proc-macro2-53e7c40ddb8e2433\run-build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_libgit2_prerelease
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.095554100s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.105 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for proc-macro2 v1.0.105/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\proc-macro2-1.0.105\\build.rs", Edition2021) }
+   0.095564800s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.105 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\proc-macro2-be5abe676b7f0db8\build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_libgit2_prerelease
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.095879800s  INFO prepare_target{force=false package_id=unicode-ident v1.0.22 target="unicode_ident"}: cargo::core::compiler::fingerprint: fingerprint error for unicode-ident v1.0.22/Build/TargetInner { ..: lib_target("unicode_ident", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\unicode-ident-1.0.22\\src\\lib.rs", Edition2018) }
+   0.095891700s  INFO prepare_target{force=false package_id=unicode-ident v1.0.22 target="unicode_ident"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\unicode-ident-dd715ca7e80e2070\lib-unicode_ident`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.096232600s  INFO prepare_target{force=false package_id=quote v1.0.43 target="quote"}: cargo::core::compiler::fingerprint: fingerprint error for quote v1.0.43/Build/TargetInner { ..: lib_target("quote", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\quote-1.0.43\\src\\lib.rs", Edition2021) }
+   0.096250300s  INFO prepare_target{force=false package_id=quote v1.0.43 target="quote"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\quote-10f0cc535411e8c5\lib-quote`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.097675400s  INFO prepare_target{force=false package_id=quote v1.0.43 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for quote v1.0.43/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\quote-1.0.43\\build.rs", Edition2021) }
+   0.097688300s  INFO prepare_target{force=false package_id=quote v1.0.43 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\quote-5e0e90f10bd26439\run-build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_libgit2_prerelease
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.097934900s  INFO prepare_target{force=false package_id=quote v1.0.43 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for quote v1.0.43/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\quote-1.0.43\\build.rs", Edition2021) }
+   0.097946000s  INFO prepare_target{force=false package_id=quote v1.0.43 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\quote-f685fff22c91881d\build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_libgit2_prerelease
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.098302700s  INFO prepare_target{force=false package_id=syn v2.0.114 target="syn"}: cargo::core::compiler::fingerprint: fingerprint error for syn v2.0.114/Build/TargetInner { ..: lib_target("syn", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\syn-2.0.114\\src\\lib.rs", Edition2021) }
+   0.098314500s  INFO prepare_target{force=false package_id=syn v2.0.114 target="syn"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\syn-484d0a1416643d46\lib-syn`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.098715000s  INFO prepare_target{force=false package_id=document-features v0.2.12 target="document_features"}: cargo::core::compiler::fingerprint: fingerprint error for document-features v0.2.12/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("document_features", ["proc-macro"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\document-features-0.2.12\\lib.rs", Edition2018) }
+   0.098728300s  INFO prepare_target{force=false package_id=document-features v0.2.12 target="document_features"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\document-features-bd3b8b888b69fb4d\lib-document_features`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.099056000s  INFO prepare_target{force=false package_id=litrs v1.0.0 target="litrs"}: cargo::core::compiler::fingerprint: fingerprint error for litrs v1.0.0/Build/TargetInner { ..: lib_target("litrs", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\litrs-1.0.0\\src\\lib.rs", Edition2021) }
+   0.099067100s  INFO prepare_target{force=false package_id=litrs v1.0.0 target="litrs"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\litrs-24a76c28ee314c75\lib-litrs`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.099395900s  INFO prepare_target{force=false package_id=parking_lot v0.12.5 target="parking_lot"}: cargo::core::compiler::fingerprint: fingerprint error for parking_lot v0.12.5/Check { test: false }/TargetInner { ..: lib_target("parking_lot", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\parking_lot-0.12.5\\src\\lib.rs", Edition2021) }
+   0.099407900s  INFO prepare_target{force=false package_id=parking_lot v0.12.5 target="parking_lot"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\parking_lot-56b2931ad290f3b9\lib-parking_lot`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.099736600s  INFO prepare_target{force=false package_id=lock_api v0.4.14 target="lock_api"}: cargo::core::compiler::fingerprint: fingerprint error for lock_api v0.4.14/Check { test: false }/TargetInner { ..: lib_target("lock_api", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lock_api-0.4.14\\src\\lib.rs", Edition2021) }
+   0.099748000s  INFO prepare_target{force=false package_id=lock_api v0.4.14 target="lock_api"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\lock_api-4c25f8f182bc99cb\lib-lock_api`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.100085000s  INFO prepare_target{force=false package_id=scopeguard v1.2.0 target="scopeguard"}: cargo::core::compiler::fingerprint: fingerprint error for scopeguard v1.2.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("scopeguard", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\scopeguard-1.2.0\\src\\lib.rs", Edition2015) }
+   0.100097100s  INFO prepare_target{force=false package_id=scopeguard v1.2.0 target="scopeguard"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\scopeguard-d9a53cd0a4d41fe6\lib-scopeguard`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.100380800s  INFO prepare_target{force=false package_id=parking_lot_core v0.9.12 target="parking_lot_core"}: cargo::core::compiler::fingerprint: fingerprint error for parking_lot_core v0.9.12/Check { test: false }/TargetInner { ..: lib_target("parking_lot_core", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\parking_lot_core-0.9.12\\src\\lib.rs", Edition2021) }
+   0.100391700s  INFO prepare_target{force=false package_id=parking_lot_core v0.9.12 target="parking_lot_core"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\parking_lot_core-4408c822312d4738\lib-parking_lot_core`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.100743700s  INFO prepare_target{force=false package_id=cfg-if v1.0.4 target="cfg_if"}: cargo::core::compiler::fingerprint: fingerprint error for cfg-if v1.0.4/Check { test: false }/TargetInner { ..: lib_target("cfg_if", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\cfg-if-1.0.4\\src\\lib.rs", Edition2018) }
+   0.100756200s  INFO prepare_target{force=false package_id=cfg-if v1.0.4 target="cfg_if"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\cfg-if-f8bf42d2fc0c3243\lib-cfg_if`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.101596300s  INFO prepare_target{force=false package_id=parking_lot_core v0.9.12 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for parking_lot_core v0.9.12/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\parking_lot_core-0.9.12\\build.rs", Edition2021) }
+   0.101608500s  INFO prepare_target{force=false package_id=parking_lot_core v0.9.12 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\parking_lot_core-7be78fd9d7cb8cf7\run-build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.101839900s  INFO prepare_target{force=false package_id=parking_lot_core v0.9.12 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for parking_lot_core v0.9.12/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\parking_lot_core-0.9.12\\build.rs", Edition2021) }
+   0.101850100s  INFO prepare_target{force=false package_id=parking_lot_core v0.9.12 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\parking_lot_core-9f9d6a8c2245025f\build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.102203400s  INFO prepare_target{force=false package_id=smallvec v1.15.1 target="smallvec"}: cargo::core::compiler::fingerprint: fingerprint error for smallvec v1.15.1/Check { test: false }/TargetInner { ..: lib_target("smallvec", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\smallvec-1.15.1\\src\\lib.rs", Edition2018) }
+   0.102215000s  INFO prepare_target{force=false package_id=smallvec v1.15.1 target="smallvec"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\smallvec-3263701c6d51c1e5\lib-smallvec`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.102538800s  INFO prepare_target{force=false package_id=windows-link v0.2.1 target="windows_link"}: cargo::core::compiler::fingerprint: fingerprint error for windows-link v0.2.1/Check { test: false }/TargetInner { ..: lib_target("windows_link", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\windows-link-0.2.1\\src\\lib.rs", Edition2021) }
+   0.102550100s  INFO prepare_target{force=false package_id=windows-link v0.2.1 target="windows_link"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\windows-link-a2622e52308cdcaa\lib-windows_link`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.102836000s  INFO prepare_target{force=false package_id=rand v0.9.2 target="rand"}: cargo::core::compiler::fingerprint: fingerprint error for rand v0.9.2/Check { test: false }/TargetInner { ..: lib_target("rand", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\rand-0.9.2\\src\\lib.rs", Edition2021) }
+   0.102847000s  INFO prepare_target{force=false package_id=rand v0.9.2 target="rand"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\rand-645bc1e281b3290f\lib-rand`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.103166100s  INFO prepare_target{force=false package_id=rand_chacha v0.9.0 target="rand_chacha"}: cargo::core::compiler::fingerprint: fingerprint error for rand_chacha v0.9.0/Check { test: false }/TargetInner { ..: lib_target("rand_chacha", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\rand_chacha-0.9.0\\src\\lib.rs", Edition2021) }
+   0.103176800s  INFO prepare_target{force=false package_id=rand_chacha v0.9.0 target="rand_chacha"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\rand_chacha-fe071d37c9ffba0d\lib-rand_chacha`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.103649100s  INFO prepare_target{force=false package_id=ppv-lite86 v0.2.21 target="ppv_lite86"}: cargo::core::compiler::fingerprint: fingerprint error for ppv-lite86 v0.2.21/Check { test: false }/TargetInner { ..: lib_target("ppv_lite86", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\ppv-lite86-0.2.21\\src\\lib.rs", Edition2021) }
+   0.103663900s  INFO prepare_target{force=false package_id=ppv-lite86 v0.2.21 target="ppv_lite86"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\ppv-lite86-2eb9da083aa33bc4\lib-ppv_lite86`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.104136700s  INFO prepare_target{force=false package_id=zerocopy v0.8.33 target="zerocopy"}: cargo::core::compiler::fingerprint: fingerprint error for zerocopy v0.8.33/Check { test: false }/TargetInner { ..: lib_target("zerocopy", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\zerocopy-0.8.33\\src\\lib.rs", Edition2021) }
+   0.104150900s  INFO prepare_target{force=false package_id=zerocopy v0.8.33 target="zerocopy"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\zerocopy-e6f578a3789f89bf\lib-zerocopy`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.105144400s  INFO prepare_target{force=false package_id=zerocopy v0.8.33 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for zerocopy v0.8.33/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\zerocopy-0.8.33\\build.rs", Edition2021) }
+   0.105156500s  INFO prepare_target{force=false package_id=zerocopy v0.8.33 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\zerocopy-88fa1f9581598fef\run-build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_libgit2_prerelease
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.105379400s  INFO prepare_target{force=false package_id=zerocopy v0.8.33 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for zerocopy v0.8.33/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\zerocopy-0.8.33\\build.rs", Edition2021) }
+   0.105389100s  INFO prepare_target{force=false package_id=zerocopy v0.8.33 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\zerocopy-682a47806299f3e8\build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_libgit2_prerelease
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.105710100s  INFO prepare_target{force=false package_id=rand_core v0.9.3 target="rand_core"}: cargo::core::compiler::fingerprint: fingerprint error for rand_core v0.9.3/Check { test: false }/TargetInner { ..: lib_target("rand_core", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\rand_core-0.9.3\\src\\lib.rs", Edition2021) }
+   0.105721500s  INFO prepare_target{force=false package_id=rand_core v0.9.3 target="rand_core"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\rand_core-4e4e7bad61b4fe2f\lib-rand_core`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.106065800s  INFO prepare_target{force=false package_id=getrandom v0.3.4 target="getrandom"}: cargo::core::compiler::fingerprint: fingerprint error for getrandom v0.3.4/Check { test: false }/TargetInner { ..: lib_target("getrandom", ["lib"], "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\getrandom-0.3.4\\src\\lib.rs", Edition2021) }
+   0.106077500s  INFO prepare_target{force=false package_id=getrandom v0.3.4 target="getrandom"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\getrandom-344c019c48ebd6b2\lib-getrandom`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.107018400s  INFO prepare_target{force=false package_id=getrandom v0.3.4 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for getrandom v0.3.4/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\getrandom-0.3.4\\build.rs", Edition2021) }
+   0.107031000s  INFO prepare_target{force=false package_id=getrandom v0.3.4 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\getrandom-3c906d7864f788d4\run-build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_libgit2_prerelease
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.107253100s  INFO prepare_target{force=false package_id=getrandom v0.3.4 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for getrandom v0.3.4/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\lianh\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\getrandom-0.3.4\\build.rs", Edition2021) }
+   0.107263400s  INFO prepare_target{force=false package_id=getrandom v0.3.4 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\getrandom-1872d15d3daae815\build-script-build-script-build`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_libgit2_prerelease
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.107633500s  INFO prepare_target{force=false package_id=console_canvas v0.1.0 (C:\Users\lianh\Coding\console_canvas) target="console_canvas"}: cargo::core::compiler::fingerprint: fingerprint error for console_canvas v0.1.0 (C:\Users\lianh\Coding\console_canvas)/Check { test: true }/TargetInner { name: "console_canvas", doc: true, ..: with_path("C:\\Users\\lianh\\Coding\\console_canvas\\src\\main.rs", Edition2024) }
+   0.107644700s  INFO prepare_target{force=false package_id=console_canvas v0.1.0 (C:\Users\lianh\Coding\console_canvas) target="console_canvas"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lianh\Coding\console_canvas\target\debug\.fingerprint\console_canvas-7c25b00cdf15f6ac\test-bin-console_canvas`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   Compiling proc-macro2 v1.0.105
+    Checking cfg-if v1.0.4
+   Compiling quote v1.0.43
+   Compiling unicode-ident v1.0.22
+   Compiling getrandom v0.3.4
+   Compiling zerocopy v0.8.33
+   Compiling winapi v0.3.9
+   Compiling unicode-segmentation v1.12.0
+   Compiling parking_lot_core v0.9.12
+    Checking smallvec v1.15.1
+    Checking scopeguard v1.2.0
+    Checking windows-link v0.2.1
+   Compiling litrs v1.0.0
+    Checking bitflags v2.10.0
+    Checking lock_api v0.4.14
+   Compiling convert_case v0.10.0
+   Compiling document-features v0.2.12
+    Checking rand_core v0.9.3
+    Checking parking_lot v0.12.5
+   Compiling syn v2.0.114
+    Checking ppv-lite86 v0.2.21
+    Checking crossterm_winapi v0.9.1
+    Checking rand_chacha v0.9.0
+    Checking rand v0.9.2
+   Compiling derive_more-impl v2.1.1
+    Checking derive_more v2.1.1
+    Checking crossterm v0.29.0
+    Checking console_canvas v0.1.0 (C:\Users\lianh\Coding\console_canvas)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 4.00s
