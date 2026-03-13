@@ -1,5 +1,3 @@
-#![allow(unused_imports)]
-
 use crossterm::event::KeyCode;
 
 use crate::canvas::{Canvas, color::Color, input::Input};

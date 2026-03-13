@@ -48,6 +48,13 @@ impl Canvas {
     }
 
     pub fn render(&mut self) {
+        if let Ok((w, h_half)) = terminal::size() {
+            let h = h_half * 2;
+            if w as u32 != self.width() || h as u32 != self.height() {
+                self.resize();
+            }
+        }
+
         self.out.clear();
         self.out.extend_from_slice(b"\x1b[?2026h\x1b[H");
         
@@ -86,6 +93,22 @@ impl Canvas {
         let mut stdout = stdout();
         stdout.write_all(&self.out).unwrap();
         stdout.flush().unwrap();
+    }
+
+    
+    fn resize(&mut self) {
+        let (w, h_half) = terminal::size().unwrap();
+        let h = h_half * 2;
+        let new_size = w as usize * h as usize;
+        
+        self.width = w as u32;
+        self.height = h as u32;
+        
+        self.pixels.clear();
+        self.pixels.resize(new_size, Color::BLACK);
+        
+        self.out.clear();
+        self.out.reserve(w as usize * h_half as usize * 20);
     }
 
     pub fn width(&self) -> u32 {
