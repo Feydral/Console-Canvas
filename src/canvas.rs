@@ -47,7 +47,6 @@ impl Canvas {
         self.pixels.fill(Color::BLACK);
     }
 
-
     pub fn render(&mut self) {
         if let Ok((w, h_half)) = terminal::size() {
             let h = h_half * 2;
@@ -66,8 +65,8 @@ impl Canvas {
         self.out.extend_from_slice(b"\x1b[38;2;0;0;0m\x1b[48;2;0;0;0m");
         
         for row in 0..rows {
-            let inv = rows - 1 - row;
-            let y_top = inv * 2 + 1;
+            let inv      = rows - 1 - row;
+            let y_top    = inv * 2 + 1;
             let y_bottom = inv * 2;
             
             for x in 0..self.width {
@@ -114,5 +113,12 @@ impl Canvas {
 
     pub fn height(&self) -> u32 {
         self.height
+    }
+}
+
+impl Drop for Canvas {
+    fn drop(&mut self) {
+        print!("\x1b[?25h\x1b[?1049l\x1b[2J\x1b[3J");
+        stdout().flush().unwrap();
     }
 }
