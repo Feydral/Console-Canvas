@@ -9,12 +9,16 @@ fn main() {
     let mut input = Input::new();
 
     for t in 0.. {
-        if let Err(input) = input.update() {
-            eprintln!("Frame {}: {:?}", t, input);
+        let _ = input.update();
+        if input.is_key_down(KeyCode::Esc) {
+            break;
         }
 
-        if input.is_key_pressed(KeyCode::Esc) {
-            break;
+        let new_w = Canvas::terminal_width();
+        let new_h = Canvas::terminal_height();
+
+        if new_w as u32 != canvas.width() || new_h as u32 != canvas.height() {
+            canvas.resize(new_w, new_h);
         }
 
         canvas.clear();
