@@ -1,9 +1,10 @@
 mod canvas;
 mod input;
+mod math;
 
 use crossterm::event::KeyCode;
 
-use crate::{canvas::Canvas, input::Input};
+use crate::{canvas::Canvas, input::Input, math::{mathi, numerics::float3::Float3}};
 
 fn main() {
     let mut canvas = Canvas::new();
@@ -26,7 +27,7 @@ fn main() {
 
         for x in 0..canvas.width() {
             for y in 0..canvas.height() {
-                canvas.set_pixel(x, y, Color::new(x as u8, y as u8, t));
+                canvas.set_pixel(x, y, mathi::rgb_to_u32(x as u8, y as u8, t as u8));
             }
         }
 

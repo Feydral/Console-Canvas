@@ -22,6 +22,30 @@ pub fn xy_to_index(x: u32, y: u32, width: u32, height: u32) -> u32 {
     y * width + x
 }
 
+/// Converts RGBA u8 channels to a u32 color.
+#[inline(always)]
+pub fn rgba_to_u32(r: u8, g: u8, b: u8, a: u8) -> u32 {
+    ((r as u32) << 24) | ((g as u32) << 16) | ((b as u32) << 8) | (a as u32)
+}
+
+/// Converts a u32 color to RGBA u8 channels.
+#[inline(always)]
+pub fn u32_to_rgba(value: u32) -> (u8, u8, u8, u8) {
+    ((value >> 24) as u8, (value >> 16) as u8, (value >> 8) as u8, value as u8)
+}
+
+/// Converts RGB u8 channels to a u32 color. Alpha is set to 255 (fully opaque).
+#[inline(always)]
+pub fn rgb_to_u32(r: u8, g: u8, b: u8) -> u32 {
+    ((r as u32) << 24) | ((g as u32) << 16) | ((b as u32) << 8) | 0xFF
+}
+
+/// Converts a u32 color to RGB u8 channels. Alpha is discarded.
+#[inline(always)]
+pub fn u32_to_rgb(value: u32) -> (u8, u8, u8) {
+    ((value >> 24) as u8, (value >> 16) as u8, (value >> 8) as u8)
+}
+
 /// Turns a bool into an u32: true -> 1, false -> 0.
 #[inline]
 pub fn bool_to_int(a: bool) -> u32 {
