@@ -1,8 +1,9 @@
+mod canvas;
+mod input;
+
 use crossterm::event::KeyCode;
 
-use crate::canvas::{Canvas, color::Color, input::Input};
-
-mod canvas;
+use crate::{canvas::Canvas, input::Input};
 
 fn main() {
     let mut canvas = Canvas::new();
