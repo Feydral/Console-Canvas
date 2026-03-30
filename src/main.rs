@@ -4,7 +4,7 @@ mod math;
 
 use crossterm::event::KeyCode;
 
-use crate::{canvas::Canvas, input::Input, math::{mathi, numerics::float3::Float3}};
+use crate::{canvas::Canvas, input::Input, math::mathi};
 
 fn main() {
     let mut canvas = Canvas::new();
