@@ -2,24 +2,24 @@ use crossterm::terminal;
 use std::io::{Write, stdout};
 
 pub struct Canvas {
-    width:  u32,
+    width: u32,
     height: u32,
     pixels: Vec<u32>,
-    out:    Vec<u8>,
+    out: Vec<u8>,
 }
 
 impl Canvas {
     pub fn new() -> Self {
         let (w, h_half) = terminal::size().unwrap();
-        let h    = h_half * 2;
+        let h = h_half * 2;
         let size = w as usize * h as usize;
         print!("\x1b[3J\x1b[H\x1b[?25l\x1b[?1049h");
         stdout().flush().unwrap();
         Self {
-            width:  w as u32,
+            width: w as u32,
             height: h as u32,
             pixels: vec![0; size],
-            out:    Vec::with_capacity(w as usize * h_half as usize * 25),
+            out: Vec::with_capacity(w as usize * h_half as usize * 25),
         }
     }
 
@@ -48,8 +48,8 @@ impl Canvas {
         self.out.extend_from_slice(b"\x1b[38;2;0;0;0m\x1b[48;2;0;0;0m");
 
         for row in 0..rows {
-            let inv      = rows - 1 - row;
-            let y_top    = inv * 2 + 1;
+            let inv = rows - 1 - row;
+            let y_top = inv * 2 + 1;
             let y_bottom = inv * 2;
 
             for x in 0..self.width {
@@ -57,13 +57,11 @@ impl Canvas {
                 let bg = self.get_pixel(x, y_bottom);
 
                 if fg != last_fg {
-                    write!(&mut self.out, "\x1b[38;2;{};{};{}m",
-                        (fg >> 24) as u8, (fg >> 16) as u8, (fg >> 8) as u8).unwrap();
+                    write!(&mut self.out, "\x1b[38;2;{};{};{}m", (fg >> 24) as u8, (fg >> 16) as u8, (fg >> 8) as u8).unwrap();
                     last_fg = fg;
                 }
                 if bg != last_bg {
-                    write!(&mut self.out, "\x1b[48;2;{};{};{}m",
-                        (bg >> 24) as u8, (bg >> 16) as u8, (bg >> 8) as u8).unwrap();
+                    write!(&mut self.out, "\x1b[48;2;{};{};{}m", (bg >> 24) as u8, (bg >> 16) as u8, (bg >> 8) as u8).unwrap();
                     last_bg = bg;
                 }
 
