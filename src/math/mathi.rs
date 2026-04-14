@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use crate::math::numerics::uint2::UInt2;
+use crate::math::numerics::UInt2;
 
 /// Returns the xy coordinate of a specific index.
 #[inline]

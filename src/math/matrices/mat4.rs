@@ -3,8 +3,8 @@
 use std::ops::*;
 use std::fmt;
 
-use crate::math::numerics::float3::Float3;
-use crate::math::numerics::float4::Float4;
+use crate::math::numerics::Float3;
+use crate::math::numerics::Float4;
 
 #[repr(C)]
 #[derive(Clone, Copy, Debug, PartialEq)]

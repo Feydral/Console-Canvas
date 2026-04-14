@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use crate::math::numerics::{float2::Float2, float3::Float3, float4::Float4};
+use crate::math::numerics::{Float2, Float3, Float4};
 
 /// Tests if a point p is inside the triangle defined by points a, b, and c. 
 /// If the point is inside the triangle, it also calculates the barycentric weights 
@@ -105,6 +105,12 @@ pub fn lerp_float2(a: Float2, b: Float2, t: f32) -> Float2 {
 /// Performs linear interpolation between two Float3 values based on a parameter t, which is clamped between 0.0 and 1.0.
 #[inline(always)]
 pub fn lerp_float3(a: Float3, b: Float3, t: f32) -> Float3 {
+	a + (b - a) * t.clamp(0.0, 1.0)
+}
+
+/// Performs linear interpolation between two Float4 values based on a parameter t, which is clamped between 0.0 and 1.0.
+#[inline(always)]
+pub fn lerp_float4(a: Float4, b: Float4, t: f32) -> Float4 {
 	a + (b - a) * t.clamp(0.0, 1.0)
 }
 
