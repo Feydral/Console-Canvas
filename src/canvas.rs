@@ -37,6 +37,26 @@ impl Canvas {
         self.pixels.fill(0);
     }
 
+    pub fn draw_text(&mut self, x: u32, y: u32, text: String) {
+        todo!()
+    }
+
+    pub fn draw_character(&mut self, x: u32, y: u32, character: char) {
+        todo!()
+    }
+
+    pub fn draw_uint(&mut self, x: u32, y: u32, uint: u32) {
+        todo!()
+    }
+
+    pub fn draw_int(&mut self, x: u32, y: u32, int: i32) {
+        todo!()
+    }
+
+    pub fn draw_float(&mut self, x: u32, y: u32, float: f32) {
+        todo!()
+    }
+
     pub fn render(&mut self) {
         self.out.clear();
         self.out.extend_from_slice(b"\x1b[?2026h\x1b[H");
