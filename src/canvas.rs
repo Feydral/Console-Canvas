@@ -3,7 +3,7 @@ pub mod font;
 use crossterm::terminal;
 use std::io::{Write, stdout};
 
-use crate::{canvas::font::Font, math::mathi};
+use crate::canvas::font::Font;
 
 pub struct Canvas {
     width: u32,

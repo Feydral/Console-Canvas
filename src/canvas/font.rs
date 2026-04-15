@@ -35,7 +35,7 @@ impl Font {
         font.glyphs.insert('F', (&UPPERCASE_F, 5));
         font.glyphs.insert('G', (&UPPERCASE_G, 5));
         font.glyphs.insert('H', (&UPPERCASE_H, 5));
-        font.glyphs.insert('I', (&UPPERCASE_I, 5));
+        font.glyphs.insert('I', (&UPPERCASE_I, 3));
         font.glyphs.insert('J', (&UPPERCASE_J, 5));
         font.glyphs.insert('K', (&UPPERCASE_K, 5));
         font.glyphs.insert('L', (&UPPERCASE_L, 5));
@@ -298,15 +298,15 @@ const UPPERCASE_H: [u8; 40] = [
     0,0,0,0,0
 ];
 
-const UPPERCASE_I: [u8; 40] = [
-    1,1,1,1,1,
-    0,0,1,0,0,
-    0,0,1,0,0,
-    0,0,1,0,0,
-    0,0,1,0,0,
-    0,0,1,0,0,
-    1,1,1,1,1,
-    0,0,0,0,0
+const UPPERCASE_I: [u8; 24] = [
+    1,1,1,
+    0,1,0,
+    0,1,0,
+    0,1,0,
+    0,1,0,
+    0,1,0,
+    1,1,1,
+    0,0,0,
 ];
 
 const UPPERCASE_J: [u8; 40] = [
