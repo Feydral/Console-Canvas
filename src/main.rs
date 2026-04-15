@@ -27,12 +27,25 @@ fn main() {
 
         canvas.clear();
 
-        canvas.draw_text(&font, 10, 10, ('A'..='Z').collect(), mathi::rgb_to_u32(127, 127, 255));
-        canvas.draw_text(&font, 10, 20, ('0'..='9').collect(), mathi::rgb_to_u32(127, 127, 255));
+        canvas.draw_text(&font, 10, 10, "ABCDEFGHIJKLMNOPQRSTUVWXYZ".to_string(), mathi::rgb_to_u32(255, 0, 0));
 
-        let symbols = ". , ; : - _ # ! ?";
+        canvas.draw_text(&font, 10, 20, "abcdefghijklmnopqrstuvwxyz".to_string(), mathi::rgb_to_u32(0, 255, 0));
 
-        canvas.draw_text(&font, 10, 30, symbols.to_string(), mathi::rgb_to_u32(127, 127, 255));
+        canvas.draw_text(&font, 10, 30, "0123456789".to_string(), mathi::rgb_to_u32(0, 0, 255));
+
+        canvas.draw_text(&font, 10, 40, "()[]{}<>".to_string(), mathi::rgb_to_u32(255, 255, 0));
+
+        canvas.draw_text(&font, 10, 50, ".,;:!?-_#".to_string(), mathi::rgb_to_u32(255, 127, 255));
+
+        canvas.draw_text(&font, 10, 60, "Hello, world!".to_string(), mathi::rgb_to_u32(200, 200, 200));
+
+        canvas.draw_text(&font, 10, 70, "Rust 1.75 - memory safe!".to_string(), mathi::rgb_to_u32(127, 200, 255));
+
+        canvas.draw_text(&font, 10, 80, "a1b2c3d4e5f6g7h8i9j0".to_string(), mathi::rgb_to_u32(255, 100, 100));
+
+        canvas.draw_text(&font, 10, 90, "(()()){}[]!!??,,..;;".to_string(), mathi::rgb_to_u32(180, 180, 180));
+
+        canvas.draw_text(&font, 10, 100, "THE QUICK BROWN FOX JUMPS".to_string(), mathi::rgb_to_u32(255, 180, 80));
 
         canvas.render();
     }

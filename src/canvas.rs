@@ -3,7 +3,7 @@ pub mod font;
 use crossterm::terminal;
 use std::io::{Write, stdout};
 
-use crate::canvas::font::Font;
+use crate::{canvas::font::Font, math::mathi};
 
 pub struct Canvas {
     width: u32,
@@ -45,7 +45,7 @@ impl Canvas {
         let mut cursor_x = x;
         
         for c in text.chars() {
-            let Some((glyph, width)) = font.glyphs.get(&c) else {
+            let Some((_, width)) = font.glyphs.get(&c) else {
                 continue;
             };
         
