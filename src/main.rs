@@ -12,7 +12,7 @@ fn main() {
 
     let font = Font::load_default();
 
-    for t in 0.. {
+    loop {
         let _ = input.update();
         if input.is_key_down(KeyCode::Esc) {
             break;
@@ -27,8 +27,18 @@ fn main() {
 
         canvas.clear();
 
-        for (index, c) in ('A'..'Z').enumerate() {
-            canvas.draw_character(&font, index as u32 * 10, 10, c, mathi::rgb_to_u32(255, 0, 0));
+        for (index, c) in ('A'..='Z').enumerate() {
+            canvas.draw_character(&font, 10 + index as u32 * 10, 10, c, mathi::rgb_to_u32(255, 0, 0));
+        }
+
+        for (index, c) in ('0'..='9').enumerate() {
+            canvas.draw_character(&font, 10 + index as u32 * 10, 20, c, mathi::rgb_to_u32(255, 0, 0));
+        }
+
+        let symbols = ['.', ',', ';', ':', '-', '_', '#', '!', '?'];
+
+        for (index, c) in symbols.iter().enumerate() {
+            canvas.draw_character(&font, 10 + index as u32 * 10, 30, *c, mathi::rgb_to_u32(255, 0, 0));
         }
 
         canvas.render();
