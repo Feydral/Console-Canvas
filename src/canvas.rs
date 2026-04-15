@@ -1,5 +1,9 @@
+pub mod font;
+
 use crossterm::terminal;
 use std::io::{Write, stdout};
+
+use crate::canvas::font::Font;
 
 pub struct Canvas {
     width: u32,
@@ -41,8 +45,27 @@ impl Canvas {
         todo!()
     }
 
-    pub fn draw_character(&mut self, x: u32, y: u32, character: char) {
-        todo!()
+    pub fn draw_character(&mut self, font: &Font, x: u32, y: u32, c: char, color: u32) {
+        let Some((glyph, width)) = font.glyphs.get(&c) else {
+            return;
+        };
+    
+        let height = font.glyph_height() as u32;
+        let width = *width as u32;
+    
+        for gy in 0..height {
+            for gx in 0..width {
+                let idx = (gy * width + gx) as usize;
+            
+                if glyph[idx] == 1 {
+                    let draw_x = x + gx;
+                
+                    let draw_y = self.height() - 1 - (y + gy);
+                
+                    self.set_pixel(draw_x, draw_y, color);
+                }
+            }
+        }
     }
 
     pub fn draw_uint(&mut self, x: u32, y: u32, uint: u32) {

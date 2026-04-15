@@ -4,11 +4,13 @@ mod math;
 
 use crossterm::event::KeyCode;
 
-use crate::{canvas::Canvas, input::Input, math::mathi};
+use crate::{canvas::{Canvas, font::Font}, input::Input, math::mathi};
 
 fn main() {
     let mut canvas = Canvas::new();
     let mut input = Input::new();
+
+    let font = Font::load_default();
 
     for t in 0.. {
         let _ = input.update();
@@ -25,10 +27,8 @@ fn main() {
 
         canvas.clear();
 
-        for x in 0..canvas.width() {
-            for y in 0..canvas.height() {
-                canvas.set_pixel(x, y, mathi::rgb_to_u32(x as u8, y as u8, t as u8));
-            }
+        for (index, c) in ('A'..'Z').enumerate() {
+            canvas.draw_character(&font, index as u32 * 10, 10, c, mathi::rgb_to_u32(255, 0, 0));
         }
 
         canvas.render();
