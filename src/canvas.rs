@@ -41,7 +41,7 @@ impl Canvas {
         self.pixels.fill(0);
     }
 
-    pub fn draw_text(&mut self, font: &Font, x: u32, y: u32, text: String, color: u32) {
+    pub fn draw_text(&mut self, font: &Font, x: u32, y: u32, text: &str, color: u32) {
         let mut cursor_x = x;
         
         for c in text.chars() {
