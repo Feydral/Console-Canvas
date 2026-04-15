@@ -54,6 +54,7 @@ impl Font {
         font.glyphs.insert('Y', (&Y, 5));
         font.glyphs.insert('Z', (&Z, 5));
 
+        font.glyphs.insert(' ', (&SPACE, 1));
         font.glyphs.insert('.', (&DOT, 2));
         font.glyphs.insert(',', (&COMMA, 2));
         font.glyphs.insert(';', (&SEMICOLON, 2));
@@ -466,6 +467,17 @@ const Z: [u8; 40] = [
     1,0,0,0,0,
     1,1,1,1,1,
     0,0,0,0,0
+];
+
+const SPACE: [u8; 8] = [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
 ];
 
 const DOT: [u8; 16] = [

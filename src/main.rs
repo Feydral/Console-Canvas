@@ -27,19 +27,12 @@ fn main() {
 
         canvas.clear();
 
-        for (index, c) in ('A'..='Z').enumerate() {
-            canvas.draw_character(&font, 10 + index as u32 * 10, 10, c, mathi::rgb_to_u32(255, 0, 0));
-        }
+        canvas.draw_text(&font, 10, 10, ('A'..='Z').collect(), mathi::rgb_to_u32(127, 127, 255));
+        canvas.draw_text(&font, 10, 20, ('0'..='9').collect(), mathi::rgb_to_u32(127, 127, 255));
 
-        for (index, c) in ('0'..='9').enumerate() {
-            canvas.draw_character(&font, 10 + index as u32 * 10, 20, c, mathi::rgb_to_u32(255, 0, 0));
-        }
+        let symbols = ". , ; : - _ # ! ?";
 
-        let symbols = ['.', ',', ';', ':', '-', '_', '#', '!', '?'];
-
-        for (index, c) in symbols.iter().enumerate() {
-            canvas.draw_character(&font, 10 + index as u32 * 10, 30, *c, mathi::rgb_to_u32(255, 0, 0));
-        }
+        canvas.draw_text(&font, 10, 30, symbols.to_string(), mathi::rgb_to_u32(127, 127, 255));
 
         canvas.render();
     }
