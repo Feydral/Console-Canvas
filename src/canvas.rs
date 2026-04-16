@@ -130,8 +130,40 @@ impl Canvas {
         }
     }
 
-    pub fn draw_uint(&mut self, x: u32, y: u32, uint: u32) {
-        todo!()
+    pub fn draw_uint(&mut self, font: &Font, x: u32, y: u32, mut n: u32, color: u32) {
+        let glyph_height = font.glyph_height() as u32;
+
+        if n == 0 {
+            if let Some(glyph) = font.glyphs.get(&'0') {
+                let w = glyph.len() as u32 / glyph_height;
+                self.draw_character(font, x - w, y, '0', color);
+            }
+            return;
+        }
+
+        let mut digits = Vec::new();
+        while n > 0 {
+            let d = (n % 10) as u8;
+            digits.push((b'0' + d) as char);
+            n /= 10;
+        }
+
+        let mut total_width = 0;
+        for &c in &digits {
+            if let Some(glyph) = font.glyphs.get(&c) {
+                total_width += glyph.len() as u32 / glyph_height;
+            }
+        }
+
+        let mut cursor_x = x - total_width;
+
+        for &c in digits.iter().rev() {
+            if let Some(glyph) = font.glyphs.get(&c) {
+                let w = glyph.len() as u32 / glyph_height;
+                self.draw_character(font, cursor_x, y, c, color);
+                cursor_x += w;
+            }
+        }
     }
 
     pub fn draw_int(&mut self, x: u32, y: u32, int: i32) {
