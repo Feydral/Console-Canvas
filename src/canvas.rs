@@ -68,11 +68,15 @@ impl Canvas {
                 let idx = (gy * width + gx) as usize;
             
                 if glyph[idx] == 1 {
-                    let draw_x = x + gx;
-                
-                    let draw_y = self.height() - 1 - (y + gy);
-                
-                    self.set_pixel(draw_x, draw_y, color);
+                    let dx = x as i32 + gx as i32;
+                    let dy = y as i32 + gy as i32;
+                                    
+                    if dx < 0 || dy < 0 || dx >= self.width as i32 || dy >= self.height as i32 {
+                        continue;
+                    }
+                    
+                    let draw_y = self.height as i32 - 1 - dy;
+                    self.set_pixel(dx as u32, draw_y as u32, color);
                 }
             }
         }
@@ -129,7 +133,7 @@ impl Canvas {
     }
 
     pub fn resize(&mut self, new_width: u32, new_height: u32) {
-        self.width  = new_width;
+        self.width = new_width;
         self.height = new_height;
         self.pixels.clear();
         self.pixels.resize((new_width * new_height) as usize, 0);
@@ -137,7 +141,7 @@ impl Canvas {
         self.out.reserve(new_width as usize * (new_height / 2) as usize * 20);
     }
 
-    pub fn width(&self)  -> u32 { self.width  }
+    pub fn width(&self) -> u32 { self.width  }
     pub fn height(&self) -> u32 { self.height }
 
     pub fn terminal_width() -> u32 {
