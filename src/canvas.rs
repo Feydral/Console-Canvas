@@ -45,23 +45,23 @@ impl Canvas {
         let mut cursor_x = x;
         
         for c in text.chars() {
-            let Some((_, width)) = font.glyphs.get(&c) else {
+            let Some(glyph) = font.glyphs.get(&c) else {
                 continue;
             };
         
             self.draw_character(font, cursor_x, y, c, color);
         
-            cursor_x += *width as u32 + 1;
+            cursor_x += glyph.len() as u32 / font.glyph_height() as u32;
         }
     }
 
     pub fn draw_character(&mut self, font: &Font, x: u32, y: u32, c: char, color: u32) {
-        let Some((glyph, width)) = font.glyphs.get(&c) else {
+        let Some(glyph) = font.glyphs.get(&c) else {
             return;
         };
     
         let height = font.glyph_height() as u32;
-        let width = *width as u32;
+        let width = glyph.len() as u32 / font.glyph_height() as u32;
     
         for gy in 0..height {
             for gx in 0..width {
