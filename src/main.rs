@@ -68,6 +68,8 @@ fn main() {
 
     let program = program.trim_start_matches('\n');
 
+    let mut vertical_offset: u32 = 0;
+
     let mut last_frame = std::time::Instant::now();
     let mut display_fps = 0.0; 
     let mut fps = 0;
@@ -94,9 +96,16 @@ fn main() {
             fps = (1.0 / dt) as u32;
         }
 
+        if input.is_key_pressed(KeyCode::Up) {
+            vertical_offset = vertical_offset.saturating_sub(1);
+        }
+        if input.is_key_pressed(KeyCode::Down) {
+            vertical_offset += 1;
+        }
+
         canvas.clear();
 
-        canvas.draw_text(&font, 5, 5, program, mathi::rgb_to_u32(127, 127, 127));
+        canvas.draw_text(&font, 5, 5 - vertical_offset, program, mathi::rgb_to_u32(127, 127, 127));
         canvas.draw_text(&font, canvas.width() - 23, canvas.height() - 13, &fps.to_string(), mathi::rgb_to_u32(127, 127, 127));
 
         canvas.render();
