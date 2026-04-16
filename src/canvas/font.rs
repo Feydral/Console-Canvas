@@ -31,36 +31,35 @@ impl Font {
                 continue;
             }
 
-            if let Some((ch_part, _)) = line.split_once('=') {
-                let ch = ch_part.trim()
-                    .trim_matches('\'')
-                    .chars()
-                    .next()
-                    .expect("Invalid char");
+            if !line.starts_with('\'') {
+                continue;
+            }
 
-                let mut bitmap = Vec::new();
+            let ch = line
+                .chars()
+                .nth(1)
+                .expect("missing glyph char");
 
-                while let Some(l) = lines.next() {
-                    let l = l.trim();
+            let mut bitmap = Vec::new();
 
-                    if l.starts_with(']') {
-                        break;
-                    }
+            while let Some(l) = lines.next() {
+                let l = l.trim();
 
-                    for num in l.split(',') {
-                        let num = num.trim();
-                        if num.is_empty() {
-                            continue;
-                        }
-
-                        bitmap.push(
-                            num.parse::<u8>().expect("Invalid number")
-                        );
-                    }
+                if l.starts_with(']') {
+                    break;
                 }
 
-                self.glyphs.insert(ch, bitmap);
+                for num in l.split(',') {
+                    let num = num.trim();
+                    if num.is_empty() {
+                        continue;
+                    }
+
+                    bitmap.push(num.parse::<u8>().expect("invalid number"));
+                }
             }
+
+            self.glyphs.insert(ch, bitmap);
         }
     }
 

@@ -43,15 +43,63 @@ impl Canvas {
 
     pub fn draw_text(&mut self, font: &Font, x: u32, y: u32, text: &str, color: u32) {
         let mut cursor_x = x;
-        
-        for c in text.chars() {
-            let Some(glyph) = font.glyphs.get(&c) else {
-                continue;
-            };
-        
-            self.draw_character(font, cursor_x, y, c, color);
-        
-            cursor_x += glyph.len() as u32 / font.glyph_height() as u32;
+        let mut cursor_y = y;
+
+        let mut chars = text.chars().peekable();
+
+        let glyph_height = font.glyph_height() as u32;
+        let tab_size = 4;
+
+        while let Some(c) = chars.next() {
+            match c {
+                '\n' => {
+                    cursor_y += glyph_height + 2;
+                    cursor_x = x;
+                }
+
+                '\t' => {
+                    let tab_width = glyph_height * tab_size;
+                    let offset = cursor_x - x;
+                    cursor_x = x + ((offset / tab_width) + 1) * tab_width;
+                }
+
+                '\\' => {
+                    match chars.peek() {
+                        Some('n') => {
+                            chars.next();
+                            cursor_y += glyph_height + 2;
+                            cursor_x = x;
+                        }
+                        Some('t') => {
+                            chars.next();
+                            let tab_width = glyph_height * tab_size;
+                            let offset = cursor_x - x;
+                            cursor_x = x + ((offset / tab_width) + 1) * tab_width;
+                        }
+                        Some('\\') => {
+                            chars.next();
+                            self.draw_character(font, cursor_x, cursor_y, '\\', color);
+                            let glyph = font.glyphs.get(&'\\').unwrap();
+                            let w = glyph.len() as u32 / glyph_height;
+                            cursor_x += w;
+                        }
+                        _ => {
+                            self.draw_character(font, cursor_x, cursor_y, '\\', color);
+                            let glyph = font.glyphs.get(&'\\').unwrap();
+                            let w = glyph.len() as u32 / glyph_height;
+                            cursor_x += w;
+                        }
+                    }
+                }
+
+                _ => {
+                    if let Some(glyph) = font.glyphs.get(&c) {
+                        self.draw_character(font, cursor_x, cursor_y, c, color);
+                        let w = glyph.len() as u32 / glyph_height;
+                        cursor_x += w;
+                    }
+                }
+            }
         }
     }
 
@@ -70,11 +118,11 @@ impl Canvas {
                 if glyph[idx] == 1 {
                     let dx = x as i32 + gx as i32;
                     let dy = y as i32 + gy as i32;
-                                    
+
                     if dx < 0 || dy < 0 || dx >= self.width as i32 || dy >= self.height as i32 {
                         continue;
                     }
-                    
+
                     let draw_y = self.height as i32 - 1 - dy;
                     self.set_pixel(dx as u32, draw_y as u32, color);
                 }

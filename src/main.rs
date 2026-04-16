@@ -12,6 +12,33 @@ fn main() {
 
     let font = Font::load_from_file("assets/default_font.txt", 8);
 
+    let program = r#"
+        fn main() {
+            println!("Start of program");
+    
+            let a = 10;
+            let b = 25;
+            let sum = a + b;
+    
+            println!("Calculation:");
+            println!("\ta = {}", a);
+            println!("\tb = {}", b);
+            println!("\tSum = {}", sum);
+    
+            if sum > 30 {
+                println!("Result is greater than 30");
+            } else {
+                println!("Result is less than or equal to 30");
+            }
+    
+            for i in 0..5 {
+                println!("Loop iteration {}", i);
+            }
+    
+            println!("End of program");
+        }
+    "#;
+
     loop {
         let _ = input.update();
         if input.is_key_down(KeyCode::Esc) {
@@ -26,17 +53,8 @@ fn main() {
         }
     
         canvas.clear();
-    
-        canvas.draw_text(&font, 10, 10, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", mathi::rgb_to_u32(255, 0, 0));
-        canvas.draw_text(&font, 10, 20, "abcdefghijklmnopqrstuvwxyz", mathi::rgb_to_u32(0, 255, 0));
-        canvas.draw_text(&font, 10, 30, "0123456789", mathi::rgb_to_u32(0, 0, 255));
-        canvas.draw_text(&font, 10, 40, "()[]{}<>", mathi::rgb_to_u32(255, 255, 0));
-        canvas.draw_text(&font, 10, 50, ".,;:!?-_#", mathi::rgb_to_u32(255, 127, 255));
-        canvas.draw_text(&font, 10, 60, "Hello, world!", mathi::rgb_to_u32(200, 200, 200));
-        canvas.draw_text(&font, 10, 70, "Rust 1.75 - memory safe!", mathi::rgb_to_u32(127, 200, 255));
-        canvas.draw_text(&font, 10, 80, "a1b2c3d4e5f6g7h8i9j0", mathi::rgb_to_u32(255, 100, 100));
-        canvas.draw_text(&font, 10, 90, "(()()){}[]!!??,,..;;", mathi::rgb_to_u32(180, 180, 180));
-        canvas.draw_text(&font, 10, 100, "THE QUICK BROWN FOX JUMPS", mathi::rgb_to_u32(255, 180, 80));
+
+        canvas.draw_text(&font, 5, 5, program, mathi::rgb_to_u32(127, 127, 127));
     
         canvas.render();
     }
