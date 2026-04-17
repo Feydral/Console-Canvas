@@ -107,6 +107,12 @@ fn main() {
 
         canvas.draw_text(&font, 5, 5 - vertical_offset, program, mathi::rgb_to_u32(127, 127, 127));
         canvas.draw_uint(&font, canvas.width() - 5, canvas.height() - 13, fps, mathi::rgb_to_u32(127, 127, 127));
+        canvas.draw_float(&font, canvas.width() - 5, canvas.height() - 23, dt, 5, mathi::rgb_to_u32(127, 127, 127));
+
+        canvas.draw_float(&font, canvas.width() - 5, canvas.height() - 33, 10.4, 2, mathi::rgb_to_u32(127, 127, 255));
+        canvas.draw_float(&font, canvas.width() - 5, canvas.height() - 43, -10.4, 2, mathi::rgb_to_u32(127, 127, 255));
+        canvas.draw_float(&font, canvas.width() - 5, canvas.height() - 53, -100.401, 5, mathi::rgb_to_u32(127, 127, 255));
+        canvas.draw_float(&font, canvas.width() - 5, canvas.height() - 63, 100.401, 5, mathi::rgb_to_u32(127, 127, 255));
 
         canvas.render();
     }
