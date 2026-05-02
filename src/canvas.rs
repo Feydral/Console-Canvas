@@ -12,6 +12,7 @@ pub struct Canvas {
     out: Vec<u8>,
 }
 
+#[allow(dead_code)]
 impl Canvas {
     pub fn new() -> Self {
         let (w, h_half) = terminal::size().unwrap();
@@ -41,85 +42,144 @@ impl Canvas {
         self.pixels.fill(0);
     }
 
-    pub fn draw_text(&mut self, font: &Font, x: u32, y: u32, text: &str, color: u32) {
-        let mut cursor_x = x;
-        let mut cursor_y = y;
-
-        let mut chars = text.chars().peekable();
-
+    pub fn draw_text(&mut self, text: &str, x: u32, y: u32, color: u32, align: Align, font: &Font) {
         let glyph_height = font.glyph_height() as u32;
         let tab_size = 4;
 
-        while let Some(c) = chars.next() {
-            match c {
-                '\n' => {
-                    cursor_y += glyph_height + 2;
-                    cursor_x = x;
-                }
+        let mut cursor_y = y;
 
-                '\t' => {
-                    let tab_width = glyph_height * tab_size;
-                    let offset = cursor_x - x;
-                    cursor_x = x + ((offset / tab_width) + 1) * tab_width;
-                }
+        for line in text.split('\n') {
+            let mut line_width = 0i32;
+            let mut chars = line.chars().peekable();
 
-                '\\' => {
-                    match chars.peek() {
-                        Some('n') => {
-                            chars.next();
-                            cursor_y += glyph_height + 2;
-                            cursor_x = x;
-                        }
-                        Some('t') => {
-                            chars.next();
-                            let tab_width = glyph_height * tab_size;
-                            let offset = cursor_x - x;
-                            cursor_x = x + ((offset / tab_width) + 1) * tab_width;
-                        }
-                        Some('\\') => {
-                            chars.next();
-                            self.draw_character(font, cursor_x, cursor_y, '\\', color);
-                            let glyph = font.glyphs.get(&'\\').unwrap();
-                            let w = glyph.len() as u32 / glyph_height;
-                            cursor_x += w;
-                        }
-                        _ => {
-                            self.draw_character(font, cursor_x, cursor_y, '\\', color);
-                            let glyph = font.glyphs.get(&'\\').unwrap();
-                            let w = glyph.len() as u32 / glyph_height;
-                            cursor_x += w;
+            while let Some(c) = chars.next() {
+                match c {
+                    '\t' => {
+                        let tab_w = (glyph_height * tab_size) as i32;
+                        line_width += tab_w;
+                    }
+                    '\\' => {
+                        match chars.peek() {
+                            Some('n') | Some('t') | Some('\\') => {
+                                let c2 = chars.next().unwrap();
+                                let actual = match c2 {
+                                    'n' => '\n',
+                                    't' => '\t',
+                                    '\\' => '\\',
+                                    _ => c2,
+                                };
+
+                                if let Some(g) = font.glyphs.get(&actual) {
+                                    line_width += g.len() as i32 / glyph_height as i32;
+                                }
+                            }
+                            _ => {
+                                if let Some(g) = font.glyphs.get(&'\\') {
+                                    line_width += g.len() as i32 / glyph_height as i32;
+                                }
+                            }
                         }
                     }
-                }
-
-                _ => {
-                    if let Some(glyph) = font.glyphs.get(&c) {
-                        self.draw_character(font, cursor_x, cursor_y, c, color);
-                        let w = glyph.len() as u32 / glyph_height;
-                        cursor_x += w;
+                    _ => {
+                        if let Some(g) = font.glyphs.get(&c) {
+                            line_width += g.len() as i32 / glyph_height as i32;
+                        }
                     }
                 }
             }
+
+            let mut cursor_x = match align {
+                Align::Left => x as i32,
+                Align::Right => x as i32 - line_width,
+            };
+
+            let mut chars = line.chars().peekable();
+
+            while let Some(c) = chars.next() {
+                match c {
+                    '\t' => {
+                        let tab_w = (glyph_height * tab_size) as i32;
+                        let offset = cursor_x - x as i32;
+                        cursor_x = x as i32 + ((offset / tab_w) + 1) * tab_w;
+                    }
+
+                    '\\' => {
+                        let draw_char = match chars.peek() {
+                            Some('n') => {
+                                chars.next();
+                                '\n'
+                            }
+                            Some('t') => {
+                                chars.next();
+                                '\t'
+                            }
+                            Some('\\') => {
+                                chars.next();
+                                '\\'
+                            }
+                            _ => '\\',
+                        };
+
+                        if draw_char == '\n' {
+                            break;
+                        }
+
+                        if draw_char == '\t' {
+                            let tab_w = (glyph_height * tab_size) as i32;
+                            let offset = cursor_x - x as i32;
+                            cursor_x = x as i32 + ((offset / tab_w) + 1) * tab_w;
+                            continue;
+                        }
+
+                        if let Some(g) = font.glyphs.get(&draw_char) {
+                            let w = g.len() as i32 / glyph_height as i32;
+                            self.draw_character(draw_char, cursor_x as u32, cursor_y, color, Align::Left, font);
+                            cursor_x += w;
+                        }
+                    }
+
+                    _ => {
+                        if let Some(g) = font.glyphs.get(&c) {
+                            let w = g.len() as i32 / glyph_height as i32;
+                            self.draw_character(c, cursor_x as u32, cursor_y, color, Align::Left, font);
+                            cursor_x += w;
+                        }
+                    }
+                }
+            }
+
+            cursor_y += glyph_height + 2;
         }
     }
 
-    pub fn draw_character(&mut self, font: &Font, x: u32, y: u32, c: char, color: u32) {
+    pub fn draw_character(&mut self, c: char, x: u32, y: u32, color: u32, align: Align, font: &Font) {
         let Some(glyph) = font.glyphs.get(&c) else {
             return;
         };
-    
-        let height = font.glyph_height() as u32;
-        let width = glyph.len() as u32 / font.glyph_height() as u32;
-    
+
+        let height = font.glyph_height() as i32;
+        let width = glyph.len() as i32 / height;
+
+        let x = x as i32;
+        let y = y as i32;
+
+        let start_x = match align {
+            Align::Left  => x,
+            Align::Right => x - width,
+        };
+
         for gy in 0..height {
             for gx in 0..width {
                 let idx = (gy * width + gx) as usize;
-            
-                if glyph[idx] == 1 {
-                    let dx = x as i32 + gx as i32;
-                    let dy = y as i32 + gy as i32;
 
-                    if dx < 0 || dy < 0 || dx >= self.width as i32 || dy >= self.height as i32 {
+                if glyph[idx] == 1 {
+                    let dx = start_x + gx;
+                    let dy = y + gy;
+
+                    if dx < 0 || dy < 0 ||
+                       dx >= self.width as i32 ||
+                       dy >= self.height as i32
+                    {
                         continue;
                     }
 
@@ -130,96 +190,113 @@ impl Canvas {
         }
     }
 
-    pub fn draw_uint(&mut self, font: &Font, x: u32, y: u32, n: u32, color: u32) {
-        let glyph_height = font.glyph_height() as u32;
+    pub fn draw_uint(&mut self, value: u32, x: u32, y: u32, color: u32, align: Align, font: &Font) {
+        let glyph_height = font.glyph_height() as i32;
+        let digits: Vec<char> = value.to_string().chars().collect();
 
-        let digits: Vec<char> = n.to_string().chars().collect();
-
-        let mut total_width = 0;
+        let mut total_width = 0i32;
         for &c in &digits {
             if let Some(glyph) = font.glyphs.get(&c) {
-                total_width += glyph.len() as u32 / glyph_height;
+                total_width += glyph.len() as i32 / glyph_height;
             }
         }
 
-        let mut cursor_x = x - total_width;
-
-        for &c in &digits {
-            if let Some(glyph) = font.glyphs.get(&c) {
-                let w = glyph.len() as u32 / glyph_height;
-                self.draw_character(font, cursor_x, y, c, color);
-                cursor_x += w;
-            }
-        }
-    }
-
-    pub fn draw_int(&mut self, font: &Font, x: u32, y: u32, n: i32, color: u32) {
-        let glyph_height = font.glyph_height() as u32;
-
-        let (sign_char, abs_val): (char, u32) = if n < 0 {
-            ('-', n.wrapping_abs() as u32)
-        } else {
-            ('+', n as u32)
+        let mut cursor_x = match align {
+            Align::Left  => x as i32,
+            Align::Right => x as i32 - total_width,
         };
 
-        let digits: Vec<char> = abs_val.to_string().chars().collect();
-
-        let mut total_width = 0;
-
         for &c in &digits {
             if let Some(glyph) = font.glyphs.get(&c) {
-                total_width += glyph.len() as u32 / glyph_height;
-            }
-        }
-
-        if let Some(glyph) = font.glyphs.get(&sign_char) {
-            total_width += glyph.len() as u32 / glyph_height;
-        }
-
-        let mut cursor_x = x - total_width;
-
-        if let Some(glyph) = font.glyphs.get(&sign_char) {
-            let w = glyph.len() as u32 / glyph_height;
-            self.draw_character(font, cursor_x, y, sign_char, color);
-            cursor_x += w;
-        }
-
-        for &c in &digits {
-            if let Some(glyph) = font.glyphs.get(&c) {
-                let w = glyph.len() as u32 / glyph_height;
-                self.draw_character(font, cursor_x, y, c, color);
+                let w = glyph.len() as i32 / glyph_height;
+                self.draw_character(c, cursor_x as u32, y, color, Align::Left, font);
                 cursor_x += w;
             }
         }
     }
 
-    pub fn draw_float(&mut self, font: &Font, x: u32, y: u32, value: f32, decimals: usize, color: u32) {
-        let glyph_height = font.glyph_height() as u32;
-    
+    pub fn draw_int(&mut self, value: i32, x: u32, y: u32, color: u32, align: Align, font: &Font, always_show_sign: bool) {
+        let glyph_height = font.glyph_height() as i32;
+
+        let (sign_char, abs_val): (char, u32) = if value < 0 {
+            ('-', value.wrapping_abs() as u32)
+        } else {
+            ('+', value as u32)
+        };
+
+        let show_sign = value < 0 || always_show_sign;
+        let digits: Vec<char> = abs_val.to_string().chars().collect();
+
+        let mut total_width = 0i32;
+
+        if show_sign {
+            if let Some(glyph) = font.glyphs.get(&sign_char) {
+                total_width += glyph.len() as i32 / glyph_height;
+            }
+        }
+
+        for &c in &digits {
+            if let Some(glyph) = font.glyphs.get(&c) {
+                total_width += glyph.len() as i32 / glyph_height;
+            }
+        }
+
+        let mut cursor_x = match align {
+            Align::Left => x as i32,
+            Align::Right => x as i32 - total_width,
+        };
+
+        if show_sign {
+            if let Some(glyph) = font.glyphs.get(&sign_char) {
+                let w = glyph.len() as i32 / glyph_height;
+                self.draw_character(sign_char, cursor_x as u32, y, color, Align::Left, font);
+                cursor_x += w;
+            }
+        }
+
+        for &c in &digits {
+            if let Some(glyph) = font.glyphs.get(&c) {
+                let w = glyph.len() as i32 / glyph_height;
+                self.draw_character(c, cursor_x as u32, y, color, Align::Left, font);
+                cursor_x += w;
+            }
+        }
+    }
+
+    pub fn draw_float(&mut self, value: f32, x: u32, y: u32, color: u32, align: Align, font: &Font, decimals: usize, always_show_sign: bool) {
+        let glyph_height = font.glyph_height() as i32;
+
         let mut s = format!("{:+.*}", decimals + 5, value);
-    
+
         if let Some(dot) = s.find('.') {
             let end = dot + 1 + decimals;
             if s.len() > end {
                 s.truncate(end);
             }
         }
-    
+
+        if !always_show_sign && s.starts_with('+') {
+            s.remove(0);
+        }
+
         let chars: Vec<char> = s.chars().collect();
-    
-        let mut total_width = 0;
+
+        let mut total_width = 0i32;
         for &c in &chars {
             if let Some(glyph) = font.glyphs.get(&c) {
-                total_width += glyph.len() as u32 / glyph_height;
+                total_width += glyph.len() as i32 / glyph_height;
             }
         }
-    
-        let mut cursor_x = x - total_width;
-    
+
+        let mut cursor_x = match align {
+            Align::Left => x as i32,
+            Align::Right => x as i32 - total_width,
+        };
+
         for &c in &chars {
             if let Some(glyph) = font.glyphs.get(&c) {
-                let w = glyph.len() as u32 / glyph_height;
-                self.draw_character(font, cursor_x, y, c, color);
+                let w = glyph.len() as i32 / glyph_height;
+                self.draw_character(c, cursor_x as u32, y, color, Align::Left, font);
                 cursor_x += w;
             }
         }
@@ -289,3 +366,5 @@ impl Drop for Canvas {
         stdout().flush().unwrap();
     }
 }
+
+pub enum Align { Left, Right }
