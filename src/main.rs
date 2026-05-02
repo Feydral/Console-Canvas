@@ -4,7 +4,7 @@ mod math;
 
 use crossterm::event::KeyCode;
 
-use crate::{canvas::{Align, Canvas, font::Font}, input::Input, math::mathi};
+use crate::{canvas::{Canvas, draw::Align, font::Font}, input::Input, math::mathi};
 
 fn main() {
     let mut canvas = Canvas::new();
@@ -43,13 +43,40 @@ fn main() {
 
         canvas.clear();
 
-        canvas.draw_text("Hello, world!", 5, 5, gray, Align::Left, &font);
+        canvas.draw(&font)
+            .at(5, 5)
+            .color(gray)
+            .align(Align::Left)
+            .text("Hello, world!");
 
-        canvas.draw_int(3, 5, 15, gray, Align::Right, &font, false);
-        canvas.draw_int(-7, 5, 25, gray, Align::Right, &font, false);
+        canvas.draw(&font)
+            .at(11, 15)
+            .color(gray)
+            .align(Align::Right)
+            .int(3, false);
 
-        canvas.draw_uint(fps, canvas.width().saturating_sub(5), canvas.height().saturating_sub(13), blue, Align::Right, &font);
-        canvas.draw_float(dt, canvas.width().saturating_sub(5), canvas.height().saturating_sub(23), blue, Align::Right, &font, 5, false);
+        canvas.draw(&font)
+            .at(11, 25)
+            .color(gray)
+            .align(Align::Right)
+            .int(-7, false);
+
+        let x = canvas.width().saturating_sub(5);
+        let y = canvas.height().saturating_sub(13);
+
+        canvas.draw(&font)
+            .at(x, y)
+            .color(blue)
+            .align(Align::Right)
+            .uint(fps);
+
+        let y = canvas.height().saturating_sub(23);
+
+        canvas.draw(&font)
+            .at(x, y)
+            .color(blue)
+            .align(Align::Right)
+            .float(dt, 5, false);
 
         canvas.render();
     }
