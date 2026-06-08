@@ -517,3 +517,39 @@ pub fn fbm_voronoi_2d(
 
     (value / amplitude_sum).min(1.0)
 }
+
+pub fn get_voronoi_edges_2d(seed: i32, x: f32, y: f32) -> f32 {
+    let xi = x.floor() as i32;
+    let yi = y.floor() as i32;
+
+    let mut f1 = f32::MAX;
+    let mut f2 = f32::MAX;
+
+    for cy in -1..=1 {
+        for cx in -1..=1 {
+            let cx_ = xi + cx;
+            let cy_ = yi + cy;
+
+            let hx = hash(
+                seed as u32 ^ cx_.wrapping_mul(PRIME_X) as u32 ^ cy_.wrapping_mul(PRIME_Y) as u32,
+            );
+            let hy = hash(hx ^ 0xdeadbeef);
+
+            let fx = cx as f32 + hx as f32 * (1.0 / u32::MAX as f32);
+            let fy = cy as f32 + hy as f32 * (1.0 / u32::MAX as f32);
+
+            let dx = x - (xi as f32 + fx);
+            let dy = y - (yi as f32 + fy);
+
+            let dist = dx * dx + dy * dy;
+            if dist < f1 {
+                f2 = f1;
+                f1 = dist;
+            } else if dist < f2 {
+                f2 = dist;
+            }
+        }
+    }
+
+    (f2 - f1).min(1.0)
+}
