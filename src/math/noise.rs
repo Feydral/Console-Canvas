@@ -553,3 +553,57 @@ pub fn get_voronoi_edges_2d(seed: i32, x: f32, y: f32) -> f32 {
 
     (f2 - f1).min(1.0)
 }
+
+pub fn get_voronoi_metric_2d(seed: i32, x: f32, y: f32) -> f32 {
+    let xi = x.floor() as i32;
+    let yi = y.floor() as i32;
+
+    let mut f1 = f32::MAX;
+    let mut f2 = f32::MAX;
+    let mut closest_x = 0.0f32;
+    let mut closest_y = 0.0f32;
+    let mut second_x = 0.0f32;
+    let mut second_y = 0.0f32;
+
+    for cy in -1..=1 {
+        for cx in -1..=1 {
+            let cx_ = xi + cx;
+            let cy_ = yi + cy;
+
+            let hx = hash(
+                seed as u32 ^ cx_.wrapping_mul(PRIME_X) as u32 ^ cy_.wrapping_mul(PRIME_Y) as u32,
+            );
+            let hy = hash(hx ^ 0xdeadbeef);
+
+            let fx = cx as f32 + hx as f32 * (1.0 / u32::MAX as f32);
+            let fy = cy as f32 + hy as f32 * (1.0 / u32::MAX as f32);
+
+            let dx = x - (xi as f32 + fx);
+            let dy = y - (yi as f32 + fy);
+            let dist = dx * dx + dy * dy;
+
+            if dist < f1 {
+                f2 = f1;
+                second_x = closest_x;
+                second_y = closest_y;
+                f1 = dist;
+                closest_x = xi as f32 + fx;
+                closest_y = yi as f32 + fy;
+            } else if dist < f2 {
+                f2 = dist;
+                second_x = xi as f32 + fx;
+                second_y = yi as f32 + fy;
+            }
+        }
+    }
+
+    let ab_x = second_x - closest_x;
+    let ab_y = second_y - closest_y;
+    let ab_dist = (ab_x * ab_x + ab_y * ab_y).sqrt();
+
+    if ab_dist == 0.0 {
+        return 0.0;
+    }
+
+    ((f2 - f1) / (2.0 * ab_dist)).clamp(0.0, 1.0)
+}

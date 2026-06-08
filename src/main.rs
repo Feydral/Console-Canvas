@@ -46,14 +46,16 @@ fn main() {
 
         for x in 0..canvas.width() {
             for y in 0..canvas.height() {
-                let scale = 0.005;
+                let scale = 0.003;
                 let warp_scale = 0.015;
                 let warp_strenght = 10.0;
 
                 let wx = x as f32
-                    + noise::get_simplex_2d(0, x as f32 * warp_scale, y as f32 * warp_scale) * warp_strenght;
+                    + noise::get_simplex_2d(0, x as f32 * warp_scale, y as f32 * warp_scale)
+                        * warp_strenght;
                 let wy = y as f32
-                    + noise::get_simplex_2d(1, x as f32 * warp_scale, y as f32 * warp_scale) * warp_strenght;
+                    + noise::get_simplex_2d(1, x as f32 * warp_scale, y as f32 * warp_scale)
+                        * warp_strenght;
 
                 let color =
                     (1.0 - noise::get_voronoi_edges_2d(2, wx * scale, wy * scale)).powi(50) * 255.0;
