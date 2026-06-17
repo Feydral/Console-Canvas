@@ -405,6 +405,11 @@ fn hash(mut x: u32) -> u32 {
     x
 }
 
+pub fn white_noise_1d(seed: i32, x: i32) -> f32 {
+    let h = hash(seed as u32 ^ x.wrapping_mul(PRIME_X) as u32);
+    (h as f32) * (2.0 / u32::MAX as f32) - 1.0
+}
+
 pub fn white_noise_2d(seed: i32, x: i32, y: i32) -> f32 {
     let h = hash(seed as u32 ^ x.wrapping_mul(PRIME_X) as u32 ^ y.wrapping_mul(PRIME_Y) as u32);
     (h as f32) * (2.0 / u32::MAX as f32) - 1.0
