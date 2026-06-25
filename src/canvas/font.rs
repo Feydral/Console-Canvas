@@ -24,9 +24,8 @@ impl Font {
     fn parse(&mut self, input: &str) {
         let mut lines = input.lines().peekable();
 
-        let header = lines.next().expect("missing glyph height header");
-
-        self.glyph_height = header
+        let glyph_height = lines.next().expect("missing glyph height header");
+        self.glyph_height = glyph_height
             .strip_prefix("glyph_height:")
             .expect("expected glyph height header")
             .trim()
@@ -57,10 +56,16 @@ impl Font {
                         continue;
                     }
 
-                    bitmap.push(num.parse::<u8>().expect("invalid number"));
+                    bitmap.push(
+                        num.parse::<u8>()
+                            .expect(&format!("invalid number in glyph data of char '{}'", ch)),
+                    );
                 }
             }
 
+            if bitmap.len() % self.glyph_height as usize != 0 {
+                panic!("invalid glyph data of char '{}'", ch)
+            }
             self.glyphs.insert(ch, bitmap);
         }
     }

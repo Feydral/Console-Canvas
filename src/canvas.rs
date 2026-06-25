@@ -115,17 +115,15 @@ impl Canvas {
         self.height
     }
 
+    pub fn end(self) {
+        print!("\x1b[?25h\x1b[?1049l\x1b[2J\x1b[3J");
+        stdout().flush().unwrap();
+    }
+
     pub fn terminal_width() -> u32 {
         terminal::size().expect("terminal::size()").0 as u32
     }
     pub fn terminal_height() -> u32 {
         2 * terminal::size().expect("terminal::size()").1 as u32
-    }
-}
-
-impl Drop for Canvas {
-    fn drop(&mut self) {
-        print!("\x1b[?25h\x1b[?1049l\x1b[2J\x1b[3J");
-        stdout().flush().unwrap();
     }
 }

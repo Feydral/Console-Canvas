@@ -38,9 +38,15 @@ impl<'a> DrawBuilder<'a> {
         self
     }
 
-    pub fn text(self, text: &str) {
-        self.canvas
-            .draw_text(text, self.x, self.y, self.color, self.align, self.font);
+    pub fn text(self, text: impl Into<String>) {
+        self.canvas.draw_text(
+            &text.into(),
+            self.x,
+            self.y,
+            self.color,
+            self.align,
+            self.font,
+        );
     }
 
     pub fn uint(self, value: u32) {
