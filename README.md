@@ -27,7 +27,7 @@ let pixel = canvas.get_pixel(10, 20);
 
 Call `canvas.clear()` at the start of each frame to reset the buffer, and `canvas.render()` at the end to flush it to the terminal.
 
-### Fonts 🔤
+### Fonts
 
 Fonts are loaded from `.ccfont` files. Two are included: `default` and `default_bold`. Once loaded, text is drawn using a fluent builder — you can specify position, color, and alignment.
 
@@ -58,7 +58,10 @@ loop {
 
     canvas.clear();
     canvas.set_pixel(5, 5, mathi::rgb_to_u32(255, 0, 0));
-    canvas.draw(&font).at(10, 10).text("Hello!");
+    canvas
+        .draw(&font)
+        .at(10, 10)
+        .text("Hello!");
     canvas.render();
 }
 
