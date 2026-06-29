@@ -14,8 +14,8 @@ fn main() {
     let mut canvas = Canvas::new();
     let mut input = Input::new();
 
-    let font = Font::load_from_file("assets/default.ccfont");
-    let bold_font = Font::load_from_file("assets/default_bold.ccfont");
+    let font = Font::load_from_file("assets/default.ctfont");
+    let bold_font = Font::load_from_file("assets/default_bold.ctfont");
 
     let mut last_frame = std::time::Instant::now();
     let mut display_fps = 0.0;
