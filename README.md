@@ -36,9 +36,9 @@ canvas.end();
 
 ## Features
 
-- 🖼️ **Pixel rendering** — set and read individual pixels on a canvas that adapts to your terminal size ([details](#pixel-rendering))
-- ✏️ **Bitmap font system** — render text and numbers using two included fonts, with a fluent draw API ([details](#font-rendering))
-- ⌨️ **Input handling** — per-frame key-down, key-held, and key-up states via the Kitty keyboard protocol ([details](#input))
+- 🖼️ [**Pixel rendering**](#pixel-rendering) — set and read individual pixels on a canvas
+- ✏️ [**Bitmap font system**](#font-rendering) — render text and numbers using two included fonts (or create your own)
+- 🕹️ [**Input handling**](#input) — per-frame key-down, key-held, and key-up states
 
 ## How it works
 
