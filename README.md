@@ -1,4 +1,4 @@
-# CacTUI 🌵
+# termcanvas 🎨
 
 A lightweight Rust library for rendering pixels directly in the terminal. Colors are written into a pixel buffer each frame, which is then flushed to the screen.
 
@@ -9,7 +9,7 @@ A lightweight Rust library for rendering pixels directly in the terminal. Colors
 ```rust
 let mut canvas = Canvas::new();
 let mut input = Input::new();
-let font = Font::load_from_file("assets/default.ctfont");
+let font = Font::load_from_file("assets/default.tcfont");
 
 loop {
     input.update().unwrap();
@@ -74,8 +74,8 @@ Two bitmap fonts are included and ready to use — `default` and `default_bold`.
 Text is drawn with `.text()`. For numbers, use `.uint()`, `.int()`, or `.float()` to render values directly without formatting them yourself.
 
 ```rust
-let font = Font::load_from_file("assets/default.ctfont");
-let font_bold = Font::load_from_file("assets/default_bold.ctfont");
+let font = Font::load_from_file("assets/default.tcfont");
+let font_bold = Font::load_from_file("assets/default_bold.tcfont");
 
 let white = mathi::rgb_to_u32(255, 255, 255);
 let gray = mathi::rgb_to_u32(180, 180, 180);
@@ -128,7 +128,7 @@ src/
   canvas.rs        # Canvas: pixel buffer, frame render, terminal resize
   canvas/
     draw.rs        # DrawBuilder fluent API, text and number rendering
-    font.rs        # Font: .ctfont file loader and glyph parser
+    font.rs        # Font: .tcfont file loader and glyph parser
   input.rs         # Input: raw mode, Kitty protocol, per-frame key state
   math.rs          # Re-exports mathf, mathi, noise
   math/
@@ -136,8 +136,8 @@ src/
     mathi.rs       # Integer math helpers
     noise.rs       # Noise functions
 assets/
-  default.ctfont       # Regular bitmap font
-  default_bold.ctfont  # Bold bitmap font
+  default.tcfont       # Regular bitmap font
+  default_bold.tcfont  # Bold bitmap font
 ```
 
 ## Dependencies
