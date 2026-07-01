@@ -23,6 +23,20 @@ impl Font {
         font
     }
 
+    pub fn load_from_str(content: &str) -> Self {
+        let mut font = Self::new();
+        font.parse(content);
+        font
+    }
+
+    pub fn default_font() -> Self {
+        Self::load_from_str(include_str!("../../assets/default.tcfont"))
+    }
+
+    pub fn default_bold_font() -> Self {
+        Self::load_from_str(include_str!("../../assets/default_bold.tcfont"))
+    }
+
     fn parse(&mut self, input: &str) {
         let mut lines = input.lines().peekable();
 
